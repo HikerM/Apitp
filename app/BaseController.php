@@ -6,7 +6,6 @@ namespace app;
 use think\App;
 use think\exception\ValidateException;
 use think\Validate;
-
 /**
  * 控制器基础类
  */
@@ -118,9 +117,9 @@ abstract class BaseController
     public function verify(array $rule, $data = 'GET')
     {
         if (empty($this->verifyObj)) {
-            $this->verifyObj = new \App\Common\Verify();
-        }
+            return $this->verifyObj = new \app\Common\Verify();
 
+        }
         $result = $this->verifyObj->check($rule, $data);
         $this->verifyData = $this->verifyObj->getData();
 

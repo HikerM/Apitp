@@ -1,5 +1,5 @@
 <?php
-namespace App\Common;
+namespace app\Common;
 
 use App\Exceptions\ApiException;
 use App\Common\Arr;

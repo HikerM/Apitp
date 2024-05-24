@@ -50,7 +50,7 @@ class ApiException extends \Exception
         $http_code = $this->getCode();
 
         if ($request->header('X-ISAPI') == 1) {
-            $data = ExceptionHandler::formatApiData($this);
+            $data = \App\Exceptions\ExceptionHandler::formatApiData($this);
             return Response::create($data, 'json',  $http_code,JSON_UNESCAPED_UNICODE);
 
         } else {

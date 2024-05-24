@@ -1,5 +1,5 @@
 <?php
-namespace App\Admin\Logic;
+namespace app\Admin\Logic;
 
 use App\Exceptions\ApiException;
 use think\facade\Db;
@@ -16,7 +16,7 @@ class AdminUserLogic
     public static function addAdminUser($data)
     {
         //验证用户名是否已经被使用
-        $verift_admin = \App\Admin\Model\AdminUserModel::where('is_on' ,1)
+        $verift_admin = \app\Admin\Model\AdminUserModel::where('is_on' ,1)
             ->where('account' ,$data['account'])
             ->first(['id']);
 
@@ -31,7 +31,7 @@ class AdminUserLogic
 
         Db::beginTransaction();
 
-        $admin_user_model = new \App\Admin\Model\AdminUserModel();
+        $admin_user_model = new \app\Admin\Model\AdminUserModel();
         $get_admin_data = array(
             'account' => $data['account'],
             'phone' => isset($data['phone']) ? $data['phone'] : 0,

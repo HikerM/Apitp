@@ -9,3 +9,10 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 use think\facade\Route;
+
+Route::get('/', function () {
+    return 'hell!';
+});
+        Route::get('user', 'admin/AdminUserController/store');
+        // 这里可以定义更多的路由
+
